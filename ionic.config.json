@@ -1,0 +1,7 @@
+{
+  "name": "ClassificadorAr",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
