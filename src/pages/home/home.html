@@ -1,17 +1,79 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
+  <ion-navbar color=primary>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Classificador de Ar</ion-title>
   </ion-navbar>
 </ion-header>
-
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+<ion-content class="login-content" padding>
+  <ion-row class="logo-row">
+    <ion-col></ion-col>
+    <ion-col width-50>       
+  
+    </ion-col>
+    <ion-col></ion-col>
+  </ion-row>
+  <div class="form-box">
+          <form #f="ngForm" (ngSubmit)="calcular(f)">
+      <ion-row>
+        <ion-col>
+          <ion-list inset>
+            
+            <ion-item>
+              <ion-label fixed>Co2:</ion-label>
+              <ion-input type="number" ngModel name="co" required></ion-input>
+           </ion-item>
+           <ion-item>
+             <ion-label fixed>Pt-Co:</ion-label>
+             <ion-input type="number" ngModel name="pt08co" required></ion-input>
+           </ion-item>
+           <ion-item>
+             <ion-label fixed>NMHC:</ion-label>
+             <ion-input type="number" ngModel name="nmhc" required></ion-input>
+           </ion-item>
+           <ion-item>
+             <ion-label fixed>Pt-NMHC</ion-label>
+             <ion-input type="number" ngModel name="pt08nmhc" required></ion-input>
+           </ion-item>
+           <ion-item>
+            <ion-label fixed>Nox</ion-label>
+            <ion-input type="number" ngModel name="nox" required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label fixed>Pt08Nox</ion-label>
+            <ion-input type="number" ngModel name="pt08nox" required></ion-input>
+          </ion-item>
+           <ion-item>
+             <ion-label fixed>No2:</ion-label>
+             <ion-input type="number" ngModel name="no2" required></ion-input>
+           </ion-item>
+           <ion-item>
+            <ion-label fixed>pt08o3:</ion-label>
+            <ion-input type="number" ngModel name="pt08o3" required></ion-input>
+          </ion-item>
+           <ion-item>
+             <ion-label fixed>T:</ion-label>
+             <ion-input type="number" ngModel name="t" required></ion-input>
+           </ion-item>
+           <ion-item>
+             <ion-label fixed>Rh:</ion-label>
+             <ion-input type="number" ngModel name="rh" required></ion-input>
+           </ion-item>
+           <ion-item>
+             <ion-label fixed>Ah:</ion-label>
+             <ion-input type="number" ngModel name="ah" required></ion-input>
+           </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+      
+      <ion-row>
+        <ion-col class="calc-col">
+              <button ion-button block type="submit" [disabled]="!f.valid">Calcular</button>
+        </ion-col>
+      </ion-row>
+      
+    </form>
+  </div>
 </ion-content>
